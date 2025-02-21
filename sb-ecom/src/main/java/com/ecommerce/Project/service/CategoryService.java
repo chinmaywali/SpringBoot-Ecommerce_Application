@@ -21,7 +21,7 @@ public interface CategoryService {
 //        }
 //        else {
 //            return false;
-//        }
+//        } 
 //    }
     List<Category> getAllCategories();
     boolean createCategory(Category category);
