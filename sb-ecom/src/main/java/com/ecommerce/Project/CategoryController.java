@@ -27,7 +27,7 @@ public class CategoryController {
     @PostMapping("/public/categories")
     public ResponseEntity<String> addCategories(@RequestBody Category category){
         categoryService.createCategory(category);
-        return new ResponseEntity<>("Category add Succesfully" , HttpStatus.OK);
+        return new ResponseEntity<>("Category added Succesfully" , HttpStatus.OK);
     }
 
     @DeleteMapping("/public/categories/{CategoryId}")
@@ -37,13 +37,13 @@ public class CategoryController {
     }
 
     @PutMapping("/public/categories/{CategoryId}")
-    public  ResponseEntity<String> updateCategory( @RequestBody Category category , @PathVariable Long CategoryId){
-        boolean isCategoryAdded = categoryService.updateCategory(category,CategoryId);
-        if(isCategoryAdded){
-            return new ResponseEntity<>("Updated",HttpStatus.OK);
-        }
-        else{
-            return new ResponseEntity<>("not Updated",HttpStatus.NOT_FOUND);
+    public ResponseEntity<String> updateCategory(@RequestBody Category category, @PathVariable Long CategoryId) {
+        boolean isUpdated = categoryService.updateCategory(category, CategoryId);
+        if (isUpdated) {
+            return new ResponseEntity<>("Category is Updated", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Category is not Updated", HttpStatus.NOT_FOUND);
         }
     }
+
 }
