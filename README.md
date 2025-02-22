@@ -85,65 +85,78 @@ _Here's a screenshot of the H2 database connection and the data stored in the ca
 | ------- | ------- |
 |![Screenshot (463)](https://github.com/user-attachments/assets/f3ca2249-93b1-451a-8e6e-c53eb5ddc941) |![Screenshot (464)](https://github.com/user-attachments/assets/9a44815a-0789-4eec-92ae-f70d46466649) |
 
-| View Tables | Initial Query | 
+| View Tables | Initial Query; Empty Table| 
 | ------- | ------- |
 |![Screenshot (466)](https://github.com/user-attachments/assets/46ac0ca2-c442-4db0-9feb-e5dd3903b364)|![Screenshot (467)](https://github.com/user-attachments/assets/f8473264-fd27-4def-b02a-660f051bc94b)|
 
 ### **2️⃣ API Calls in Postman** 
 
-#### **📤 Fetch All Categories (GET Request)**  
+#### **📥 Fetch All Categories (GET Request)**  
 - **EndPoint:** `http://localhost:8080/api/public/categories`
 - _Response:_  initially empty
   
 ```json
 []
 ```
-![Screenshot (474)](https://github.com/user-attachments/assets/f571aef5-59da-4f63-831a-9d1d6ebdb6e3)
+| Initially Empty | 
+| ------- | 
+|![Screenshot (474)](https://github.com/user-attachments/assets/f571aef5-59da-4f63-831a-9d1d6ebdb6e3)|
 
-#### **📥 Create Category (POST Request)**  
-- **EndPoint:** `http://localhost:8080/api/public/categories`
-- _Request Payload:_ add one by one [Post one by one]
+
+#### **➕ Add Category (POST Request)**  
+- **EndPoint:** `http://localhost:8080/api/public/categories`  
+- _Request Payload:_ Add categories **one by one** by sending separate POST requests for each.
+
 ```json
-
+// First Request
 {
     "categoryName": "Clothing & Fashion"
 }
---------------------
+
+// Second Request
 {
     "categoryName": "Electronics"
 }
---
+
+// Third Request
 {
     "categoryName": "Fresh Fruits & Vegetables"
 }
 
+// Fourth Request
 {
     "categoryName": "Footwear"
 }
+```
 
-```  
-_Response:_  
+**💡 Important:**  
+- Each category must be added **individually** by sending a separate request for each payload.
+- Do **not** send all the categories in a single request.
+
+**🛠️ API Responses (Example Response for Each Request):**
 ```json
 {
-   "id": 1,
-   "categoryName": "Clothing & Fashion"
+    "id": 1,
+    "categoryName": "Clothing & Fashion"
 }
-
+```
+```json
 {
     "id": 2,
-     "categoryName": "Electronics"
+    "categoryName": "Electronics"
 }
-
+```
+```json
 {
-     "id": 3,
-     "categoryName": "Fresh Fruits & Vegetables"
+    "id": 3,
+    "categoryName": "Fresh Fruits & Vegetables"
 }
-
+```
+```json
 {
-     "id": 4,
-     "categoryName": "Footwear"
+    "id": 4,
+    "categoryName": "Footwear"
 }
-
 ```
 | Adding Clothing & Fashion Category | Adding Electronics Category | 
 | ------- | ------- |
@@ -153,7 +166,7 @@ _Response:_
 | ------- | ------- |
 |![Screenshot (478)](https://github.com/user-attachments/assets/f70efc59-2d0d-4b0b-b99b-4fb776ef23b4) |![Screenshot (479)](https://github.com/user-attachments/assets/404da8cf-6a7f-456a-ac15-cee2b5ae7af7)|
 
-#### **📤 Fetch All Categories (GET Request)**  
+#### **📥 Fetch All Categories (GET Request)**  
 _Response:_  
 ```json
 [
@@ -178,11 +191,15 @@ _Response:_
      }
 
 ]
-```  
-![Screenshot (480)](https://github.com/user-attachments/assets/cc9fe312-e655-4af5-88fc-eb704d752ccd)
+```
+| Categories are Added| 
+| ------- | 
+|![Screenshot (480)](https://github.com/user-attachments/assets/cc9fe312-e655-4af5-88fc-eb704d752ccd)|
+
 
 #### **📝 Update Category (PUT Request)**  
-_Request:_  Updating category name of  the category with Category id 3.. i.e Fresh Fruits & Vegetables to Home & Kitchen
+- **EndPoint:** `http://localhost:8080/api/public/categories/3`
+- _Request:_  Updating category name of  the category with Category id 3.. i.e Fresh Fruits & Vegetables to Home & Kitchen
 ```json
 {
     "categoryName": "Home & Kitchen"
@@ -202,7 +219,8 @@ _Response:_
 
 
 #### **🗑️ Delete Category (DELETE Request)**  
-_Response:_  Delete the category with CategoryId 2 
+- **EndPoint:** `http://localhost:8080/api/public/categories/2`
+- _Response:_  Delete the category with CategoryId 2 
 ```json
 {
     "message": "Category deleted successfully"
@@ -213,6 +231,14 @@ _Response:_  Delete the category with CategoryId 2
 |![Screenshot (483)](https://github.com/user-attachments/assets/cceacd18-736f-4add-8377-e3d10ceff43a) |![Screenshot (485)](https://github.com/user-attachments/assets/805a6205-4f42-45ee-899e-4ea28e82c98a)|
 
 ---
+### **📊 H2 Database - Final State After API Calls**  
+| **Before API Calls** | **After API Calls** |  
+|---------------------|--------------------|  
+| ![Screenshot (467)](https://github.com/user-attachments/assets/f8473264-fd27-4def-b02a-660f051bc94b) | ![Screenshot (486)](https://github.com/user-attachments/assets/29ec3327-eebc-4f7b-ab60-6bc8989864e8) |
+
+---
+
+
 
 ## 🎯 Future Enhancements  
 
