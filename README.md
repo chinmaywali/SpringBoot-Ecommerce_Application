@@ -41,7 +41,7 @@ It is built using **Java Spring Boot**, integrated with an **H2 in-memory databa
  ┃ ┣ 📜 application.properties    # Spring Boot configuration file
  ┣ 📜 pom.xml                     # Project dependencies
 ```
-
+---
 ## 🔥 API Endpoints  
 
 | HTTP Method | Endpoint                   | Description             |
@@ -50,6 +50,8 @@ It is built using **Java Spring Boot**, integrated with an **H2 in-memory databa
 | **POST**   | `/api/public/categories`   | Create a new category   |
 | **PUT**    | `/api/public/categories/{id}` | Update an existing category |
 | **DELETE** | `/api/public/categories/{id}` | Delete a category      |
+
+---
 
 ## 🚀 Getting Started  
 
@@ -76,6 +78,7 @@ mvn spring-boot:run
     "categoryName": "Clothing & Fashion"
 }
 ```
+---
 
 ## 📸 Screenshots & Demo  
 
@@ -88,6 +91,8 @@ _Here's a screenshot of the H2 database connection and the data stored in the ca
 | View Tables | Initial Query; Empty Table| 
 | ------- | ------- |
 |![Screenshot (466)](https://github.com/user-attachments/assets/46ac0ca2-c442-4db0-9feb-e5dd3903b364)|![Screenshot (467)](https://github.com/user-attachments/assets/f8473264-fd27-4def-b02a-660f051bc94b)|
+
+--- 
 
 ### **2️⃣ API Calls in Postman** 
 
@@ -196,6 +201,7 @@ _Response:_
 | ------- | 
 |![Screenshot (480)](https://github.com/user-attachments/assets/cc9fe312-e655-4af5-88fc-eb704d752ccd)|
 
+---
 
 #### **📝 Update Category (PUT Request)**  
 - **EndPoint:** `http://localhost:8080/api/public/categories/3`
@@ -217,6 +223,7 @@ _Response:_
 | ------- | ------- |
 |![Screenshot (481)](https://github.com/user-attachments/assets/0bc9ef9c-c086-41f7-bc81-f438bd274d4f)|![Screenshot (482)](https://github.com/user-attachments/assets/56fa6e72-a6b1-43e0-9e87-31039ac4b192)|
 
+---
 
 #### **🗑️ Delete Category (DELETE Request)**  
 - **EndPoint:** `http://localhost:8080/api/public/categories/2`
@@ -237,8 +244,6 @@ _Response:_
 | ![Screenshot (467)](https://github.com/user-attachments/assets/f8473264-fd27-4def-b02a-660f051bc94b) | ![Screenshot (486)](https://github.com/user-attachments/assets/29ec3327-eebc-4f7b-ab60-6bc8989864e8) |
 
 ---
-
-
 
 ## 🎯 Future Enhancements  
 
