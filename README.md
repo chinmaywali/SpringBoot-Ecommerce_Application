@@ -92,14 +92,17 @@ _Here's a screenshot of the H2 database connection and the data stored in the ca
 ### **2️⃣ API Calls in Postman** 
 
 #### **📤 Fetch All Categories (GET Request)**  
-_Response:_  initially empty
+- **EndPoint:** `http://localhost:8080/api/public/categories`
+- _Response:_  initially empty
+  
 ```json
 []
 ```
 ![Screenshot (474)](https://github.com/user-attachments/assets/f571aef5-59da-4f63-831a-9d1d6ebdb6e3)
 
 #### **📥 Create Category (POST Request)**  
-_Request Payload:_ add one by one [Post one by one]
+- **EndPoint:** `http://localhost:8080/api/public/categories`
+- _Request Payload:_ add one by one [Post one by one]
 ```json
 
 {
@@ -166,12 +169,12 @@ _Response:_
 
      {
          "id": 3,
-         "categoryName": " Fresh Fruits"
+         "categoryName": "Fresh Fruits & Vegetables"
      },
 
      {
         "id": 4,
-        "categoryName": "Vegetables Footwear"
+        "categoryName": "Footwear"
      }
 
 ]
@@ -179,17 +182,17 @@ _Response:_
 ![Screenshot (480)](https://github.com/user-attachments/assets/cc9fe312-e655-4af5-88fc-eb704d752ccd)
 
 #### **📝 Update Category (PUT Request)**  
-_Request:_  
+_Request:_  Updating category name of  the category with Category id 3.. i.e Fresh Fruits & Vegetables to Home & Kitchen
 ```json
 {
-    "categoryName": "Updated Electronics"
+    "categoryName": "Home & Kitchen"
 }
 ```  
 _Response:_  
 ```json
 {
-    "id": 1,
-    "categoryName": "Updated Electronics"
+    "id": 3,
+    "categoryName": "Home & Kitchen"
 }
 ```
 
@@ -199,13 +202,13 @@ _Response:_
 
 
 #### **🗑️ Delete Category (DELETE Request)**  
-_Response:_  
+_Response:_  Delete the category with CategoryId 2 
 ```json
 {
     "message": "Category deleted successfully"
 }
 ```
-| Image 1 | Image 2 | 
+| Delete the category with CategoryId 2  | Deleted | 
 | ------- | ------- |
 |![Screenshot (483)](https://github.com/user-attachments/assets/cceacd18-736f-4add-8377-e3d10ceff43a) |![Screenshot (485)](https://github.com/user-attachments/assets/805a6205-4f42-45ee-899e-4ea28e82c98a)|
 
