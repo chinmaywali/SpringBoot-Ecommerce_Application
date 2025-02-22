@@ -77,6 +77,140 @@ mvn spring-boot:run
 }
 ```
 
+## 📸 Screenshots & Demo  
+
+### **1️⃣ H2 Database Connection**  
+_Here's a screenshot of the H2 database connection and the data stored in the categories table._  
+| H2 DataBase | Test Connection Successful | 
+| ------- | ------- |
+|![Screenshot (463)](https://github.com/user-attachments/assets/f3ca2249-93b1-451a-8e6e-c53eb5ddc941) |![Screenshot (464)](https://github.com/user-attachments/assets/9a44815a-0789-4eec-92ae-f70d46466649) |
+
+| View Tables | Initial Query | 
+| ------- | ------- |
+|![Screenshot (466)](https://github.com/user-attachments/assets/46ac0ca2-c442-4db0-9feb-e5dd3903b364)|![Screenshot (467)](https://github.com/user-attachments/assets/f8473264-fd27-4def-b02a-660f051bc94b)|
+
+### **2️⃣ API Calls in Postman** 
+
+#### **📤 Fetch All Categories (GET Request)**  
+_Response:_  initially empty
+```json
+[]
+```
+![Screenshot (474)](https://github.com/user-attachments/assets/f571aef5-59da-4f63-831a-9d1d6ebdb6e3)
+
+#### **📥 Create Category (POST Request)**  
+_Request Payload:_ add one by one [Post one by one]
+```json
+
+{
+    "categoryName": "Clothing & Fashion"
+}
+--------------------
+{
+    "categoryName": "Electronics"
+}
+--
+{
+    "categoryName": "Fresh Fruits & Vegetables"
+}
+
+{
+    "categoryName": "Footwear"
+}
+
+```  
+_Response:_  
+```json
+{
+   "id": 1,
+   "categoryName": "Clothing & Fashion"
+}
+
+{
+    "id": 2,
+     "categoryName": "Electronics"
+}
+
+{
+     "id": 3,
+     "categoryName": "Fresh Fruits & Vegetables"
+}
+
+{
+     "id": 4,
+     "categoryName": "Footwear"
+}
+
+```
+| Adding Clothing & Fashion Category | Adding Electronics Category | 
+| ------- | ------- |
+|![Screenshot (475)](https://github.com/user-attachments/assets/5a15fe91-3944-4e92-b218-ff5924c08823) |![Screenshot (477)](https://github.com/user-attachments/assets/2196e95f-6105-4169-8654-fc0aaa3b54e7)|
+
+| Adding Fresh Fruits & Vegetables Category | Adding Footwear Category | 
+| ------- | ------- |
+|![Screenshot (478)](https://github.com/user-attachments/assets/f70efc59-2d0d-4b0b-b99b-4fb776ef23b4) |![Screenshot (479)](https://github.com/user-attachments/assets/404da8cf-6a7f-456a-ac15-cee2b5ae7af7)|
+
+#### **📤 Fetch All Categories (GET Request)**  
+_Response:_  
+```json
+[
+     {
+        "id": 1,
+        "categoryName": "Clothing & Fashion"
+     },
+
+     {
+        "id": 2,
+        "categoryName": "Electronics"
+     },
+
+     {
+         "id": 3,
+         "categoryName": " Fresh Fruits"
+     },
+
+     {
+        "id": 4,
+        "categoryName": "Vegetables Footwear"
+     }
+
+]
+```  
+![Screenshot (480)](https://github.com/user-attachments/assets/cc9fe312-e655-4af5-88fc-eb704d752ccd)
+
+#### **📝 Update Category (PUT Request)**  
+_Request:_  
+```json
+{
+    "categoryName": "Updated Electronics"
+}
+```  
+_Response:_  
+```json
+{
+    "id": 1,
+    "categoryName": "Updated Electronics"
+}
+```
+
+| Updating the category with id 3 | Updated | 
+| ------- | ------- |
+|![Screenshot (481)](https://github.com/user-attachments/assets/0bc9ef9c-c086-41f7-bc81-f438bd274d4f)|![Screenshot (482)](https://github.com/user-attachments/assets/56fa6e72-a6b1-43e0-9e87-31039ac4b192)|
+
+
+#### **🗑️ Delete Category (DELETE Request)**  
+_Response:_  
+```json
+{
+    "message": "Category deleted successfully"
+}
+```
+| Image 1 | Image 2 | 
+| ------- | ------- |
+|![Screenshot (483)](https://github.com/user-attachments/assets/cceacd18-736f-4add-8377-e3d10ceff43a) |![Screenshot (485)](https://github.com/user-attachments/assets/805a6205-4f42-45ee-899e-4ea28e82c98a)|
+
+---
+
 ## 🎯 Future Enhancements  
 
 ✅ **JWT Authentication** – Secure API access with user roles.  
